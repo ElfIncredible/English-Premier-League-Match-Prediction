@@ -107,14 +107,14 @@ Player Scoring dataset has these columns:
 
 The data processing stage was crucial in transforming raw football match records into a format suitable for machine learning. This process involved cleaning, engineering new features, and structuring the dataset for accurate prediction of match outcomes.
 
-#### Data Cleaning
+#### 1. Data Cleaning
   - Removed incomplete records and duplicates.
 
   - Standardized team names and formats across seasons.
 
   - Parsed and aligned match date formats to support time-aware modeling.
 
-### Feature Engineering
+#### 2. Feature Engineering
 To enhance the predictive power of the model, several new features were created based on historical performance, team statistics, and match outcomes. These include:
 
 - **Performance Metrics:**
@@ -135,7 +135,7 @@ To enhance the predictive power of the model, several new features were created 
 
 These features were chosen for their relevance in capturing team form, offensive/defensive strength, and recent momentum—critical factors in determining match outcomes.
 
-#### Encoding and Transformation
+#### 3. Encoding and Transformation
 - Categorical features like HomeTeam and Awayteam were label-encoded.
 - Numerical features were normalized to ensure consistent model behavior.
 - Time-series dependencies were preserved by avoiding data leakage between train and test splits.

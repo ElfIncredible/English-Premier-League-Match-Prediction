@@ -7,6 +7,7 @@ This project explores goal-scoring patterns in the English Premier League using 
 - [Dataset](#dataset)
 - [Machine Learning](#machine-learning)
    - [Data Preprocessing](#data-preprocessing)
+   - [Model Selection](#model-selection)
 
 ## Project Overview
 The EPL Goal Scoring Insights project is a data-driven analysis of goal-scoring behavior in the English Premier League during the 2023/24 season. The raw data from football-data.co.uk was refined through feature engineering to focus on individual goal events—identifying the minute, scorer, and team for each goal across all matches.
@@ -139,3 +140,46 @@ These features were chosen for their relevance in capturing team form, offensive
 - Categorical features like HomeTeam and Awayteam were label-encoded.
 - Numerical features were normalized to ensure consistent model behavior.
 - Time-series dependencies were preserved by avoiding data leakage between train and test splits.
+
+### Model Selection
+To predict football match outcomes with high accuracy, careful consideration was given to selecting appropriate machine learning models that could handle the complexities of the data, including non-linear relationships, class imbalance, and feature interactions.
+
+**1.Prediction Goals**
+
+The model was trained to predict three key outcomes:
+   - Full-Time Result (Win, Lose, Draw)
+   - Scoreline (e.g., 2–1)
+   - Outcome Summary (e.g., "Fulham Win")
+
+Given these objectives, I adopted a multi-model approach, where separate models could be trained for classification (result, outcome summary) and regression (score prediction) tasks.
+
+**2. Models Considered**
+
+Several models were tested and compared based on performance metrics like accuracy, F1-score, and mean absolute error (for score prediction):
+   **- Logistic Regression**
+      - Served as a baseline classifier.
+      - Quick to train, but limited in handling complex feature interactions.
+
+   **- Random Forest Classifier**
+      - Robust to overfitting and interpretable.
+      - Performed well on classification tasks like full-time result prediction.
+
+   **- Gradient Boosting (XGBoost)**
+      - Provided high accuracy with efficient handling of feature importance.
+      - Excelled in both classification and regression predictions.
+      - Final model of choice due to its balance of speed and performance.
+
+   **- K-Nearest Neighbors (KNN)**
+      - Tested for classification but showed sensitivity to feature scaling and sparsity.
+
+   **- Neural Networks (MLP)**
+      - Used experimentally for capturing deeper patterns.
+      - Required more training data and fine-tuning but showed promising results.
+
+**3. Final Model Choice**
+
+The final deployed system uses a combination of:
+   - **XGBoost Classifier** for predicting full-time results and outcomes.
+   - **XGBoost Regressor** for scoreline prediction.
+
+These models offered a solid tradeoff between accuracy, training speed, and interpretability, while effectively leveraging the engineered features like team form, goal history, and scoring patterns.

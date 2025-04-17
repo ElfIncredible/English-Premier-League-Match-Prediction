@@ -198,52 +198,39 @@ The prediction task was broken down into three sub-problems:
 
 These were treated as supervised learning problems using structured data.
 
-🧪 2. Data Splitting
+**2. Data Splitting**
 To ensure robust model performance:
+   - The dataset was split into training and testing sets using an 80-20 ratio.
+   - **Stratified sampling** was used for classification to maintain class balance.
 
-The dataset was split into training and testing sets using an 80-20 ratio.
+**3. Model Pipeline**
 
-Stratified sampling was used for classification to maintain class balance.
-
-🧠 3. Model Pipeline
 A modeling pipeline was constructed with the following stages:
+**- Preprocessing**
+   - Standardization and scaling (where necessary).
+   - Handling missing values and categorical encoding.
 
-Preprocessing
+**- Model Training**
+   - The main model used was XGBoost, chosen for its ability to handle complex interactions and imbalanced data effectively.
+   - GridSearchCV was employed for hyperparameter tuning to find the optimal model configuration.
 
-Standardization and scaling (where necessary).
+**- Model Evaluation**
+   - **Classification:** Evaluated using accuracy, F1-score, and confusion matrix.
+   - **Regression:** Evaluated using **Mean Absolute Error (MAE)** and **Root Mean Squared Error (RMSE)**.
 
-Handling missing values and categorical encoding.
+**4. Features Used**
 
-Model Training
-
-The main model used was XGBoost, chosen for its ability to handle complex interactions and imbalanced data effectively.
-
-GridSearchCV was employed for hyperparameter tuning to find the optimal model configuration.
-
-Model Evaluation
-
-Classification: Evaluated using accuracy, F1-score, and confusion matrix.
-
-Regression: Evaluated using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
-
-📊 4. Features Used
 The model utilized a rich set of engineered features, including:
-
-Team Performance: Goal difference, points, wins, losses, and draws for both teams.
-
-Match Dynamics: Total goals, individual scores, and scoring times.
-
-Team Identity: Names of home and away teams.
+   - **Team Performance:** Goal difference, points, wins, losses, and draws for both teams.
+   - **Match Dynamics:** Total goals, individual scores, and scoring times.
+   - **Team Identity:** Names of home and away teams.
 
 These features provided a comprehensive snapshot of match conditions and team form.
 
-🧠 5. Multi-Task Output
+**5. Multi-Task Output**
+
 The model construction allowed for parallel prediction of:
+   - Full-Time Result (home, draw, away)
+   - Exact Match Score (2-1, 1-1, etc.)
+   - Descriptive Outcome (Arsenal Win, Chelsea Draw)
 
-Full-Time Result (home, draw, away)
-
-Exact Match Score (2-1, 1-1, etc.)
-
-Descriptive Outcome (Arsenal Win, Chelsea Draw)
-
-This design ensured a versatile prediction system catering to both analysts and casual fans.

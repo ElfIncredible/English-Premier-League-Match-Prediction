@@ -26,8 +26,7 @@ These insights can help fans, bettors, and analysts anticipate match outcomes wi
 ### Methodology
 To achieve these objectives, the project followed a streamlined data science workflow:
 
-  1. Data Collection & Cleaning
-
+  **1. Data Collection & Cleaning:**
     - Sourced EPL data from online repositories
     - Cleaned and normalized match records, goal timings, and player names.
 

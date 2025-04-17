@@ -107,51 +107,35 @@ Player Scoring dataset has these columns:
 
 The data processing stage was crucial in transforming raw football match records into a format suitable for machine learning. This process involved cleaning, engineering new features, and structuring the dataset for accurate prediction of match outcomes.
 
-**Data Cleaning**
-
+#### Data Cleaning
   - Removed incomplete records and duplicates.
 
   - Standardized team names and formats across seasons.
 
   - Parsed and aligned match date formats to support time-aware modeling.
 
-**Feature Engineering**
-
+### Feature Engineering
 To enhance the predictive power of the model, several new features were created based on historical performance, team statistics, and match outcomes. These include:
 
 - **Performance Metrics:**
   - HTGD (Home Team Goal Difference): Cumulative goal difference up to the match.
   - ATGD (Away Team Goal Difference)
+  - HTGP / ATGP: Total games played by each team.
+  - HTW / ATW: Total wins for the home and away teams.
+  - HTD / ATD: Total draws.
+  - HTL / ATL: Total losses.
+  - HTP / ATP: Points accumulated by each team (typically calculated as 3×Wins + 1×Draws).
 
-HTGP / ATGP: Total games played by each team.
-
-HTW / ATW: Total wins for the home and away teams.
-
-HTD / ATD: Total draws.
-
-HTL / ATL: Total losses.
-
-HTP / ATP: Points accumulated by each team (typically calculated as 3×Wins + 1×Draws).
-
-Match Outcome Details:
-
-GD: Final goal difference in the match (used for evaluating prediction accuracy).
-
-TG: Total goals scored by both teams.
-
-Scores: The actual scoreline (e.g., 2–1).
-
-HomeTeam, Awayteam: Categorical identifiers for each match.
-
-HSS, ASS: Number of scorers for the home and away teams.
-
-HSTS, ASTS: The minutes at which each goal was scored.
+- **Match Outcome Details:**
+   - GD: Final goal difference in the match (used for evaluating prediction accuracy).
+   - TG: Total goals scored by both teams.
+   - Scores: The actual scoreline (e.g., 2–1).
+   - HomeTeam, Awayteam: Categorical identifiers for each match.
+   - HSS, ASS: Number of scorers for the home and away teams.HSTS, ASTS: The minutes at which each goal was scored.
 
 These features were chosen for their relevance in capturing team form, offensive/defensive strength, and recent momentum—critical factors in determining match outcomes.
 
-🔄 Encoding and Transformation
-Categorical features like HomeTeam and Awayteam were label-encoded.
-
-Numerical features were normalized to ensure consistent model behavior.
-
-Time-series dependencies were preserved by avoiding data leakage between train and test splits.
+#### Encoding and Transformation
+- Categorical features like HomeTeam and Awayteam were label-encoded.
+- Numerical features were normalized to ensure consistent model behavior.
+- Time-series dependencies were preserved by avoiding data leakage between train and test splits.

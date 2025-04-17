@@ -8,6 +8,7 @@ This project explores goal-scoring patterns in the English Premier League using 
 - [Machine Learning](#machine-learning)
    - [Data Preprocessing](#data-preprocessing)
    - [Model Selection](#model-selection)
+   - [Model Construction](#model-construction)
 
 ## Project Overview
 The EPL Goal Scoring Insights project is a data-driven analysis of goal-scoring behavior in the English Premier League during the 2023/24 season. The raw data from football-data.co.uk was refined through feature engineering to focus on individual goal events—identifying the minute, scorer, and team for each goal across all matches.
@@ -185,3 +186,64 @@ The final deployed system uses a combination of:
    - **XGBoost Regressor** for scoreline prediction.
 
 These models offered a solid tradeoff between accuracy, training speed, and interpretability, while effectively leveraging the engineered features like team form, goal history, and scoring patterns.
+
+### Model Construction
+The predictive system was built to forecast football match outcomes by learning patterns from historical match data. The construction process involved several steps, from dataset preparation and feature selection to model training and evaluation.
+
+**1. Problem Framing**
+The prediction task was broken down into three sub-problems:
+   - **Classification:** Predicting the Full-Time Result (Home Win, Away Win, or Draw).
+   - **Regression:** Estimating the Final Score (e.g., 2–1).
+   - **Summary Outcome:** Generating a readable Outcome Statement (e.g., "Fulham Win").
+
+These were treated as supervised learning problems using structured data.
+
+🧪 2. Data Splitting
+To ensure robust model performance:
+
+The dataset was split into training and testing sets using an 80-20 ratio.
+
+Stratified sampling was used for classification to maintain class balance.
+
+🧠 3. Model Pipeline
+A modeling pipeline was constructed with the following stages:
+
+Preprocessing
+
+Standardization and scaling (where necessary).
+
+Handling missing values and categorical encoding.
+
+Model Training
+
+The main model used was XGBoost, chosen for its ability to handle complex interactions and imbalanced data effectively.
+
+GridSearchCV was employed for hyperparameter tuning to find the optimal model configuration.
+
+Model Evaluation
+
+Classification: Evaluated using accuracy, F1-score, and confusion matrix.
+
+Regression: Evaluated using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+
+📊 4. Features Used
+The model utilized a rich set of engineered features, including:
+
+Team Performance: Goal difference, points, wins, losses, and draws for both teams.
+
+Match Dynamics: Total goals, individual scores, and scoring times.
+
+Team Identity: Names of home and away teams.
+
+These features provided a comprehensive snapshot of match conditions and team form.
+
+🧠 5. Multi-Task Output
+The model construction allowed for parallel prediction of:
+
+Full-Time Result (home, draw, away)
+
+Exact Match Score (2-1, 1-1, etc.)
+
+Descriptive Outcome (Arsenal Win, Chelsea Draw)
+
+This design ensured a versatile prediction system catering to both analysts and casual fans.

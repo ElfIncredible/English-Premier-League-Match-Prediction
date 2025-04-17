@@ -66,3 +66,29 @@ The challenge is to develop a data-driven predictive system that can go beyond b
 
 ## Dataset
 This [dataset](https://www.football-data.co.uk/englandm.php) and this [dataset](https://github.com/schochastics/football-data/blob/master/data/goals_time/eng-premier-league.csv) provides comprehensive statistical data on EPL matches starting from the 1993/1994 season up to the current season, with daily updates to ensure the most accurate and timely results.
+
+EPL Match Dataset has these columns:
+
+    Date: Match Date (dd/mm/yy)
+    HomeTeam: Home Team
+    AwayTeam: Away Team
+    FTHG: Full Time Home Team Goals
+    FTAG: Full Time Away Team Goals
+    FTR: Full Time Result (H=Home Win, D=Draw, A=Away Win)
+    HTHG: Half Time Home Team Goals
+    HTAG: Half Time Away Team Goals
+    HTR: Half Time Result (H=Home Win, D=Draw, A=Away Win)
+    Referee: Match Referee
+    HS: Home Team Shots
+    AS: Away Team Shots
+    HST: Home Team Shots on Target
+    AST: Away Team Shots on Target
+    HF: Home Team Fouls Committed
+    AF: Away Team Fouls Committed
+    HC: Home Team Corners
+    AC: Away Team Corners
+    HY: Home Team Yellow Cards
+    AY: Away Team Yellow Cards
+    HR: Home Team Red Cards
+    AR: Away Team Red Cards
+

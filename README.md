@@ -31,6 +31,7 @@ To achieve these objectives, the project followed a streamlined data science wor
   - Cleaned and normalized match records, goal timings, and player names.
 
 **2. Feature Engineering**
+
 Extracted detailed features such as:
   - Goals per minute
   - Home/Away team scoring patterns
@@ -38,6 +39,7 @@ Extracted detailed features such as:
   - Game tempo and turning points
 
 **3. Exploratory Data Analysis (EDA)**
+
 Analyzed goal frequency across match periods, home vs. away performance, and team scoring consistency.
 
 **4. Model Building**
@@ -49,3 +51,15 @@ Analyzed goal frequency across match periods, home vs. away performance, and tea
     - Match Result (e.g., Home Win)
     - Final Score Prediction (e.g., 2-1)
     - Outcome Summary (e.g., Fulham Win)
+
+## Problem Statement
+
+Despite the abundance of football data available, most predictive systems either oversimplify match outcomes or rely heavily on traditional stats like win rates and player form. This limits their effectiveness in providing precise predictions such as the exact scoreline or a clear match outcome narrative.
+
+The challenge is to develop a data-driven predictive system that can go beyond binary win/loss outputs and accurately forecast:
+
+  - The full-time result (Home Win, Away Win, or Draw)
+
+  - The final scoreline (e.g., 2-1, 1-1)
+
+  - The named outcome (e.g., "Arsenal Win", "Draw")

@@ -14,6 +14,7 @@ This project explores goal-scoring patterns in the English Premier League using 
    - [Model Evaluation](#model-evaluation)
    - [Prediction System Development](#prediction-system-development)
    - [Results and Impact](#results-and-impact)
+   - [Future Improvements](#future-improvements)
  
 
 ## Project Overview
@@ -285,3 +286,12 @@ These outcomes reflect the model's ability to generalize well across various mat
    - **For Developers & Researchers:** Demonstrates a practical application of machine learning in sports analytics, paving the way for more advanced prediction tools in the future.
 
 This project showcases the potential of AI in sports forecasting, turning raw match data into accurate and meaningful predictions that can enhance fan experience, support strategic analysis, and inspire further innovation in sports tech.
+
+### Future Improvements
+To enhance the model’s performance and usability, several upgrades are planned:
+   - **Real-Time Data Integration:** Including live stats like injuries, weather, and lineups for more accurate predictions.
+   - **Advanced Models:** Explore ensemble methods or deep learning (e.g., LSTM, transformers) for better accuracy.
+   - **Player-Level Insights:** Add player performance metrics to improve match outcome predictions.
+   - **Explainability:** Use tools like SHAP or LIME to make predictions more transparent.
+   - **User Interface:** Build a simple web or mobile app for user-friendly predictions.
+   - **Automatic Updates:** Implement continuous learning using new match data.

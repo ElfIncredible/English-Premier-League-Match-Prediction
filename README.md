@@ -63,3 +63,6 @@ The challenge is to develop a data-driven predictive system that can go beyond b
   - The final scoreline (e.g., 2-1, 1-1)
 
   - The named outcome (e.g., "Arsenal Win", "Draw")
+
+## Dataset
+This [dataset](https://www.football-data.co.uk/englandm.php) and this [dataset](https://github.com/schochastics/football-data/blob/master/data/goals_time/eng-premier-league.csv) provides comprehensive statistical data on EPL matches starting from the 1993/1994 season up to the current season, with daily updates to ensure the most accurate and timely results.

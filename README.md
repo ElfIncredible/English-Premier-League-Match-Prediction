@@ -9,6 +9,12 @@ This project explores goal-scoring patterns in the English Premier League using 
    - [Data Preprocessing](#data-preprocessing)
    - [Model Selection](#model-selection)
    - [Model Construction](#model-construction)
+   - [Model Compilation](#model-compilation)
+   - [Model Training](#model-training)
+   - [Model Evaluation](#model-evaluation)
+   - [Prediction System Development](#prediction-system-development)
+   - [Results and Impact](#results-and-impact)
+ 
 
 ## Project Overview
 The EPL Goal Scoring Insights project is a data-driven analysis of goal-scoring behavior in the English Premier League during the 2023/24 season. The raw data from football-data.co.uk was refined through feature engineering to focus on individual goal events—identifying the minute, scorer, and team for each goal across all matches.
@@ -234,3 +240,48 @@ The model construction allowed for parallel prediction of:
    - Exact Match Score (2-1, 1-1, etc.)
    - Descriptive Outcome (Arsenal Win, Chelsea Draw)
 
+### Model Compilation
+
+The model compilation phase involved setting up the logic for training and evaluation using XGBoost for both classification (match results) and regression (match scores). Key configurations included defining appropriate objectives (multi:softmax for classification, reg:squarederror for regression), evaluation metrics (accuracy, F1-score, MAE, RMSE), and optimized hyperparameters. Early stopping was incorporated to prevent overfitting, and the model was designed to output structured predictions including the full-time result, scoreline, and outcome (e.g., “Fulham Win”). This compilation process ensured the system was ready for robust training and multi-output prediction.
+
+### Model Training
+
+The model training phase utilized the XGBoost algorithm, training separate models for each target: match result (classification), full-time scoreline, and outcome (regression). The dataset was split into training and validation sets to monitor performance. Training involved feeding in the feature-engineered data, optimizing against evaluation metrics like accuracy and RMSE. Early stopping was employed to halt training when performance stopped improving, ensuring efficiency and preventing overfitting. The training process resulted in well-generalized models capable of predicting match outcomes, scores, and winning teams with high reliability.
+
+### Model Evaluation
+
+The performance of the predictive system was assessed using appropriate evaluation metrics for both classification and regression tasks. For predicting the match result (home win, away win, or draw), accuracy and confusion matrices were employed to gauge how well the model distinguished between outcome classes. For score and outcome predictions, regression metrics like Root Mean Square Error (RMSE) and Mean Absolute Error (MAE) were used to measure the closeness of predicted values to actual results.
+
+Cross-validation was also applied to ensure robustness and consistency across different data splits. Overall, the models demonstrated strong predictive capability, capturing key patterns from the engineered features and yielding accurate forecasts for full-time results, scores, and winning teams.
+
+### Prediction System Development
+
+The final prediction system integrates three core components to provide comprehensive match insights:
+
+**1. Result Prediction:**
+
+A classification model predicts the full-time result—whether the home team wins, the away team wins, or the match ends in a draw. This provides an immediate overview of the likely match outcome.
+
+**2. Scoreline Prediction:**
+A regression model estimates the final score, such as 2-1 or 1-3. This component gives users a more detailed view of the expected performance in terms of goals scored by each team.
+
+**3. Outcome Description:**
+The system combines the results and scores to generate a human-readable outcome (e.g., "Fulham Win" or "Chelsea Draw"). This is the final interpretation layer that transforms model outputs into actionable insights.
+
+The system takes pre-processed match data as input, applies the trained models, and outputs predictions in real-time or batch formats. With a well-structured pipeline and engineered features like goal difference, team performance stats, and scorer timelines, the system provides reliable and insightful football match forecasts.
+
+### Results and Impact
+
+**Results**
+   - **Result Prediction Accuracy:** The classification model achieved high accuracy in determining match outcomes (home win, away win, draw), demonstrating strong learning from historical data patterns.
+   - **Scoreline Prediction:** The regression model closely estimated final scores, capturing goal margins and trends effectively.
+   - **Outcome Interpretation:** The final output—such as "Arsenal Win" or "2-2 Draw"—combined model outputs into intuitive, user-friendly results.
+
+These outcomes reflect the model's ability to generalize well across various match scenarios using engineered features like goal differences, team form, and previous performances.
+
+**Impact**
+   - **For Fans:** Provides fun and insightful pre-match forecasts to fuel matchday excitement and friendly debates.
+   - **For Analysts:** Offers a data-driven lens for reviewing historical matches or analyzing upcoming fixtures.
+   - **For Developers & Researchers:** Demonstrates a practical application of machine learning in sports analytics, paving the way for more advanced prediction tools in the future.
+
+This project showcases the potential of AI in sports forecasting, turning raw match data into accurate and meaningful predictions that can enhance fan experience, support strategic analysis, and inspire further innovation in sports tech.

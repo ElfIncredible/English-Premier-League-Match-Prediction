@@ -13,6 +13,7 @@ This project explores goal-scoring patterns in the English Premier League using 
 The EPL Goal Scoring Insights project is a data-driven analysis of goal-scoring behavior in the English Premier League during the 2023/24 season. The raw data from football-data.co.uk was refined through feature engineering to focus on individual goal events—identifying the minute, scorer, and team for each goal across all matches.
 
 **Key Objectives**
+
 The main goal of this project was to go beyond basic match stats and develop a predictive system that can:
 
   - Predict the Full-Time Result: Whether the match ends in a Home Win, Away Win, or Draw.
@@ -22,3 +23,43 @@ The main goal of this project was to go beyond basic match stats and develop a p
   - Provide a clear Match Outcome Statement: For example, "Fulham Win", "Arsenal Draw", etc.
 
 These insights can help fans, bettors, and analysts anticipate match outcomes with a data-backed foundation.
+
+**Methodology** 
+
+To achieve these objectives, the project followed a streamlined data science workflow:
+
+  1. Data Collection & Cleaning
+    - Sourced EPL data from online repositories
+    - Cleaned and normalized match records, goal timings, and player names.
+
+Feature Engineering
+
+Extracted detailed features such as:
+
+Goals per minute
+
+Home/Away team scoring patterns
+
+Key players contributing to wins
+
+Game tempo and turning points
+
+Exploratory Data Analysis (EDA)
+
+Analyzed goal frequency across match periods, home vs. away performance, and team scoring consistency.
+
+Model Building
+
+Built and trained a predictive model using supervised learning techniques (e.g., Random Forests, XGBoost).
+
+Features included team strength, recent form, scoring tendencies, and goal distribution over time.
+
+Prediction System Development
+
+Deployed a logic to combine probabilities and output:
+
+Match Result (e.g., Home Win)
+
+Final Score Prediction (e.g., 2-1)
+
+Outcome Summary (e.g., Fulham Win)

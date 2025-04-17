@@ -162,24 +162,25 @@ Several models were tested and compared based on performance metrics like accura
    - Quick to train, but limited in handling complex feature interactions.
 
    **- Random Forest Classifier**
-      - Robust to overfitting and interpretable.
-      - Performed well on classification tasks like full-time result prediction.
+   - Robust to overfitting and interpretable.
+   - Performed well on classification tasks like full-time result prediction.
 
    **- Gradient Boosting (XGBoost)**
-      - Provided high accuracy with efficient handling of feature importance.
-      - Excelled in both classification and regression predictions.
-      - Final model of choice due to its balance of speed and performance.
+   - Provided high accuracy with efficient handling of feature importance.
+   - Excelled in both classification and regression predictions.
+   - Final model of choice due to its balance of speed and performance.
 
    **- K-Nearest Neighbors (KNN)**
-      - Tested for classification but showed sensitivity to feature scaling and sparsity.
+   - Tested for classification but showed sensitivity to feature scaling and sparsity.
 
    **- Neural Networks (MLP)**
-      - Used experimentally for capturing deeper patterns.
-      - Required more training data and fine-tuning but showed promising results.
+   - Used experimentally for capturing deeper patterns.
+   - Required more training data and fine-tuning but showed promising results.
 
 **3. Final Model Choice**
 
 The final deployed system uses a combination of:
+
    - **XGBoost Classifier** for predicting full-time results and outcomes.
    - **XGBoost Regressor** for scoreline prediction.
 

@@ -30,34 +30,22 @@ To achieve these objectives, the project followed a streamlined data science wor
   - Sourced EPL data from online repositories
   - Cleaned and normalized match records, goal timings, and player names.
 
-Feature Engineering
-
+**2. Feature Engineering**
 Extracted detailed features such as:
+  - Goals per minute
+  - Home/Away team scoring patterns
+  - Key players contributing to wins
+  - Game tempo and turning points
 
-Goals per minute
-
-Home/Away team scoring patterns
-
-Key players contributing to wins
-
-Game tempo and turning points
-
-Exploratory Data Analysis (EDA)
-
+**3. Exploratory Data Analysis (EDA)**
 Analyzed goal frequency across match periods, home vs. away performance, and team scoring consistency.
 
-Model Building
+**4. Model Building**
+  - Built and trained a predictive model using supervised learning techniques (e.g., Random Forests, XGBoost).
+  - Features included team strength, recent form, scoring tendencies, and goal distribution over time.
 
-Built and trained a predictive model using supervised learning techniques (e.g., Random Forests, XGBoost).
-
-Features included team strength, recent form, scoring tendencies, and goal distribution over time.
-
-Prediction System Development
-
-Deployed a logic to combine probabilities and output:
-
-Match Result (e.g., Home Win)
-
-Final Score Prediction (e.g., 2-1)
-
-Outcome Summary (e.g., Fulham Win)
+**5. Prediction System Development**
+  - Deployed a logic to combine probabilities and output:
+    - Match Result (e.g., Home Win)
+    - Final Score Prediction (e.g., 2-1)
+    - Outcome Summary (e.g., Fulham Win)

@@ -13,8 +13,8 @@ This project explores goal-scoring patterns in the English Premier League using 
    - [Model Training](#model-training)
    - [Model Evaluation](#model-evaluation)
    - [Prediction System Development](#prediction-system-development)
-   - [Results and Impact](#results-and-impact)
-   - [Future Improvements](#future-improvements)
+- [Results and Impact](#results-and-impact)
+- [Future Improvements](#future-improvements)
  
 
 ## Project Overview
@@ -271,7 +271,7 @@ The system combines the results and scores to generate a human-readable outcome 
 
 The system takes pre-processed match data as input, applies the trained models, and outputs predictions in real-time or batch formats. With a well-structured pipeline and engineered features like goal difference, team performance stats, and scorer timelines, the system provides reliable and insightful football match forecasts.
 
-### Results and Impact
+## Results and Impact
 
 **Results**
    - **Result Prediction Accuracy:** The classification model achieved high accuracy in determining match outcomes (home win, away win, draw), demonstrating strong learning from historical data patterns.
@@ -287,7 +287,7 @@ These outcomes reflect the model's ability to generalize well across various mat
 
 This project showcases the potential of AI in sports forecasting, turning raw match data into accurate and meaningful predictions that can enhance fan experience, support strategic analysis, and inspire further innovation in sports tech.
 
-### Future Improvements
+## Future Improvements
 To enhance the model’s performance and usability, several upgrades are planned:
    - **Real-Time Data Integration:** Including live stats like injuries, weather, and lineups for more accurate predictions.
    - **Advanced Models:** Explore ensemble methods or deep learning (e.g., LSTM, transformers) for better accuracy.

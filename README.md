@@ -156,9 +156,10 @@ Given these objectives, I adopted a multi-model approach, where separate models 
 **2. Models Considered**
 
 Several models were tested and compared based on performance metrics like accuracy, F1-score, and mean absolute error (for score prediction):
+   
    **- Logistic Regression**
-      - Served as a baseline classifier.
-      - Quick to train, but limited in handling complex feature interactions.
+   - Served as a baseline classifier.
+   - Quick to train, but limited in handling complex feature interactions.
 
    **- Random Forest Classifier**
       - Robust to overfitting and interpretable.
